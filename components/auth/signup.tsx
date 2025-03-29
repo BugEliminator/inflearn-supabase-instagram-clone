@@ -12,6 +12,16 @@ export default function SignUp({ setView }) {
 
   const supabase = createBrowserSupabaseClient();
 
+  const redirectUrl =
+    process.env.NEXT_PUBLIC_REDIRECT_URL ||
+    (process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://supabase-instagram-clone.vercel.app");
+
+  emailRedirectTo: `${redirectUrl}/signup/confirm`;
+
+  console.log("✅ REDIRECT_URL", process.env.NEXT_PUBLIC_REDIRECT_URL);
+
   const signupMutation = useMutation({
     mutationFn: async () => {
       const { data, error } = await supabase.auth.signUp({
