@@ -16,7 +16,7 @@ export default function SignUp({ setView }) {
     process.env.NEXT_PUBLIC_REDIRECT_URL ||
     (process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://supabase-instagram-clone-183me152h-chanwoos-projects-438f34e1.vercel.app");
+      : "https://supabase-instagram-clone.vercel.app");
 
   console.log("✅ redirectUrl 사용 중:", redirectUrl);
 
