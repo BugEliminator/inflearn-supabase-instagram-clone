@@ -16,9 +16,9 @@ export default function SignUp({ setView }) {
     process.env.NEXT_PUBLIC_REDIRECT_URL ||
     (process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://supabase-instagram-clone.vercel.app");
+      : "https://supabase-instagram-clone-183me152h-chanwoos-projects-438f34e1.vercel.app");
 
-  emailRedirectTo: `${redirectUrl}/signup/confirm`;
+  console.log("✅ redirectUrl 사용 중:", redirectUrl);
 
   console.log("✅ REDIRECT_URL", process.env.NEXT_PUBLIC_REDIRECT_URL);
 
@@ -28,7 +28,7 @@ export default function SignUp({ setView }) {
         email,
         password,
         options: {
-          emailRedirectTo: `${process.env.NEXT_PUBLIC_REDIRECT_URL}/signup/confirm`,
+          emailRedirectTo: `${redirectUrl}/signup/confirm`, // ✅ 변수 사용
         },
       });
 
